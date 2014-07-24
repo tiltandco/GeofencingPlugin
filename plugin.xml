@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com.tiltandco.geofencing"
+    version="0.1.0">
+
+    <name>Geofencing</name>
+    <description>Geofencing for iOS and Android</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,plugin,skeleton</keywords>
+
+    <js-module src="Geofencing.js" name="Geofencing">
+        <clobbers target="geofencing" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Geofencing">
+                <param name="android-package" value="com.tiltandco.geofencing.Geofencing"/>
+            </feature>
+        </config-file>
+        <!-- copy plugin and supporting files -->
+        <source-file src="android/geofencing" target-dir="src/com/tiltandco" />
+      
+     </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Geofencing">
+                <param name="ios-package" value="Geofencing"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="ios/Geofencing.h" />
+        <source-file src="ios/Geofencing.m" />
+        
+    </platform>
+
+
+</plugin>
